@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:atb_music_player/models/song.dart';
@@ -42,7 +44,7 @@ class PlaylistsProvider extends ChangeNotifier {
 
   // pause
   void pause() async {
-    await _audioPlayer.stop();
+    await _audioPlayer.pause();
     _isPlaying = false;
     notifyListeners();
   }
