@@ -31,7 +31,7 @@ class SongPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +45,7 @@ class SongPage extends StatelessWidget {
                   ),
 
                   const SizedBox(
-                    height: 25,
+                    height: 100,
                   ),
 
                   NeuBox(
@@ -54,7 +54,12 @@ class SongPage extends StatelessWidget {
                       // Album Art
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(currentSong.albumArtImagePath),
+                        child: Image.asset(
+                          currentSong.albumArtImagePath,
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
                       ),
 
                       // Name & Artist

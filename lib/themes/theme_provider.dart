@@ -9,6 +9,17 @@ class ThemeProvider extends ChangeNotifier {
   // Function to change the theme
   ThemeData get themeData => _themeData;
 
+  // function to check the current page on bottom navigation bar
+  int _currentPageIndex = 0;
+
+  int get currentPageIndex => _currentPageIndex;
+
+  set currentPageIndex(int index) {
+    _currentPageIndex = index;
+    notifyListeners();
+    print("Current Page Index: $index");
+  }
+
   bool get isDarkMode => _themeData == darkMode;
 
   set themeData(ThemeData themeData) {
